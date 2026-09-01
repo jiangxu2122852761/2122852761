@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>降序官网</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>降</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif;}
+body{
+    background:#eef1f8;
+    min-height:100vh;
+    padding:60px 20px;
+    background-image: radial-gradient(circle at 20% 10%, #c7d2ff 0%, transparent 45%),
+    radial-gradient(circle at 80% 85%, #b8c8ff 0%, transparent 45%);
+}
+.container{
+    max-width:900px;
+    margin:0 auto;
+}
+h1{
+    text-align:center;
+    font-size:48px;
+    color:#222;
+    margin-bottom:32px;
+}
+.notice-box{
+    background:rgba(255,255,255,0.65);
+    backdrop-filter: blur(12px);
+    border-left:5px solid #407bff;
+    padding:20px 24px;
+    border-radius:12px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom:36px;
+}
+.notice-text{
+    font-size:15px;
+    line-height:1.6;
+    color:#333;
+}
+.btn-wrap{
+    display:block;
+    width:100%;
+    border-radius:16px;
+    margin-bottom:18px;
+    transition: all 0.22s ease;
+}
+.btn-wrap:hover{
+    transform: translateY(-3px);
+}
+.btn-wrap:active{
+    transform: translateY(2px);
+}
+.btn-item{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius:16px;
+    color:#ffffff;
+    font-size:18px;
+    padding:22px;
+    text-align:center;
+    text-decoration:none;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border:1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 8px 24px rgba(30, 40, 90, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.22s ease,box-shadow 0.22s ease;
+}
+.btn-wrap:hover .btn-item{
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 12px 30px rgba(30, 40, 90, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+}
+.btn-wrap:active .btn-item{
+    background: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 3px 10px rgba(30, 40, 90, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+}
+.row-two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>降序官网</h1>
+    <div class="notice-box">
+        <div class="notice-text">
+☆降序全项目公告声明☆ 本系列作品仅供学习研究，使用者的任何行为与应用降序无关，请在24小时内删除本应用[下载代表同意本协议] 若有侵权违法行为，请联系我方删除内容 本卡网均为自愿捐赠 无root玩家请勿下单，下单默认同意 不支持米八 下单默认同意 有事联系降序 恶意投诉拉黑删卡处理
+        </div>
+    </div>
+    <div class="row-two">
+        <div class="btn-wrap">
+            <a class="btn-item" href="https://shop.bromk.cn/shop/sad" target="_blank">💳 免手续费卡网1</a>
+        </div>
+        <div class="btn-wrap">
+            <a class="btn-item">💳 免手续费卡网2</a>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <a class="btn-item" href="https://qm.qq.com/q/qq31ua2rCg" target="_blank">👥 加入QQ群</a>
+    </div>
+    <div class="btn-wrap">
+        <a class="btn-item" href="https://t.me/jiangxunb7878" target="_blank">✈️ 加入TG群</a>
+    </div>
+</div>
+<script>
+// 生成短促按压咔哒反馈音，无需音频文件
+let audioCtx = null;
+document.querySelectorAll('.btn-item').forEach(btn=>{
+    btn.addEventListener('mousedown', function(e){
+        if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.type = 'square';
+        osc.frequency.value = 1200;
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+        osc.start(audioCtx.currentTime);
+        osc.stop(audioCtx.currentTime + 0.04);
+    })
+})
+</script>
+</body>
+</html>
